@@ -1,14 +1,11 @@
-version: "3.8"
 services:
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
     container_name: homepage
-    restart: unless-stopped
     ports:
       - 3000:3000
     volumes:
-      - /opt/homepage/config:/app/config
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /path/to/config:/app/config # Make sure your local config directory exists
+      - /var/run/docker.sock:/var/run/docker.sock:ro # (optional) For docker integrations
     environment:
-      TZ: Europe/London
-      HOMEPAGE_DISABLE_HOST_VALIDATION: "true"
+      HOMEPAGE_ALLOWED_HOSTS: gethomepage.dev # required, may need port. See gethomepage.dev/installation/#homepage_allowed_hosts
