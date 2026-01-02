@@ -12,3 +12,4 @@ services:
     environment:
       TZ: Europe/London
       HOMEPAGE_ALLOWED_HOSTS: "home.oakdene.it.com"
+      HOMEPAGE_ALLOWED_HOSTS: "home.chattoweb.net"
